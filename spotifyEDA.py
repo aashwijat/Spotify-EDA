@@ -12,8 +12,20 @@ st.logo("logo.png")
 tab1, tab2, tab3,tab4 = st.tabs(["Home","My Library","Listening History","Analytics"])
 
 def home():
+    print("I am in Home")
     st.write("#### :green[My Dashboard]")
+    myAlbums = load_albums()
+
 
 
 with tab1:
     home()
+
+
+def load_albums():
+    albums = pd.read_csv("myAlbums.csv")
+    return(albums)
+
+def load_artists():
+    artists = pd.read_csv("myArtists.csv")
+    return(artists)
