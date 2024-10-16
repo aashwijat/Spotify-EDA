@@ -38,14 +38,14 @@ def home():
     h_c1, h_c2, h_c3 = st.columns([33,33,33])
     
     with h_c1:
-        st.write("#### :green[My Music]")
+        st.write("#### :blue[My Music]")
         with st.container(border=True,height=650):
             my_albums = pd.DataFrame(myAlbums)
             album_Artist = my_albums['artist']
-            selected_artist = st.selectbox("* :green[Select Artist]",album_Artist.unique(), index=1)
-            for selected_artist in my_albums:
-                st.write(my_albums['album'])
-
+            selected_artist = st.selectbox("#### :green[Select Artist]",album_Artist.unique(), index=1)
+            st.write(" :green[Albums]")
+            album = my_albums.loc[my_albums['artist']==selected_artist,'album']
+            st.table(album)
 
 
 
