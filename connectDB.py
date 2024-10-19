@@ -72,3 +72,19 @@ def main_load_data():
             st.success(f"Data File Uploaded")
             st.success(f"Table Name: {table_selected}")
             st.success(f"Number of records : {number_of_records}")
+
+def db_connect(db_details):
+    db_conn = pg.connect(
+        database = db_details["database"],
+        host = db_details["host"],
+        user= db_details["user"],
+        password = db_details["password"],
+        port = db_details["port"]
+    )
+    return db_conn
+
+def db_get_data_for_metric(sql_query):
+    db_conn = db_connect(db_details)
+    result_set_df = pd.read_sql_query(sql_query, db_conn)
+    db_conn.close()
+    return result_set_df.iloc[0]
