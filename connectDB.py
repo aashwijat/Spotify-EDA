@@ -88,3 +88,9 @@ def db_get_data_for_metric(sql_query):
     result_set_df = pd.read_sql_query(sql_query, db_conn)
     db_conn.close()
     return result_set_df.iloc[0]
+
+def db_get_data_for_chart(sql_query):
+    db_conn = db_connect(db_details)
+    result_set_df = pd.read_sql_query(sql_query, db_conn)
+    db_conn.close()
+    return result_set_df

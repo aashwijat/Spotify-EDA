@@ -21,12 +21,15 @@ def marquee():
 
 
 def myLib():
-    print("I am in Home")
+    print("I am in myLibrary")
    # st.write("#### :green[My Dashboard]")
     myAlbums = load_albums()
     myTracks = load_tracks()
     myArtists = load_artists()
     myMarquee = marquee()
+
+    with st.container():
+        st.write("### My Library")
 
     with st.container():
         c1, c2, c3, c4 = st.columns([25,25,25,25])
