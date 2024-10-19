@@ -34,13 +34,14 @@ def home():
             my_marquee = pd.DataFrame(myMarquee)
             st.write("#### :blue[My Top Artist : ]")
             marq = my_marquee.loc[my_marquee['segment']=='Super Listeners']
-            st.write(marq['artist'], width=500)
+            #st.write(marq['artist'], width=500)
+            st.data_editor(marq['artist'], width=500, hide_index=True)
             
 
-        with st.container(border=True,height=250):
+        with st.container(border=True,height=450):
             my_albums = pd.DataFrame(myAlbums)
             album_Artist = my_albums['artist']
             selected_artist = st.selectbox("#### :blue[Select Artist]",album_Artist.unique(), index=1)
             st.write(" :blue[Albums]")
             album = my_albums.loc[my_albums['artist']==selected_artist,'album']
-            st.table(album)
+            st.data_editor(album, hide_index = True, width = 500)
