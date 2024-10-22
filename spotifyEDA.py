@@ -11,7 +11,7 @@ st.subheader("Welcome Aashwija!")
 st.logo("logo.png")
 
 # # creating tabs
-tab1, tab2, tab3 = st.tabs(["Home","Spotify Analysis","Upload Data"])
+tab1, tab2, tab3, tab4 = st.tabs(["Home","Spotify Analysis","Upload Data", "Debug"])
 
 with tab1:
     myLib.myLib()
@@ -21,3 +21,6 @@ with tab2:
 
 with tab3:
     cDB.main_load_data()
+
+with tab4:
+    st.write(st.session_state)

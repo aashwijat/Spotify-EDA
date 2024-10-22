@@ -7,7 +7,7 @@ import plotly.express as px
 def home():
     print("In HOME")
     with st.container():
-        st.write("### :green[My Dashboard]")
+        st.write("### :green[My Analysis]")
     
     with st.container():
         c1, c2, c3, c4 = st.columns([25,25,25,25])
@@ -45,7 +45,7 @@ def home():
         c1,c2,c3=st.columns([50,2,48])
         with c1:
             with st.container(border=True):
-                st.write("##### Top Streamed Artists")
+                st.write("##### :green[Top Streamed Artists]")
                 sql_query = "SELECT \"artistName\", SUM(\"minPlayed\") FROM \"spotifyEDA.app\".streaming_history "\
                             "GROUP BY \"artistName\" ORDER BY SUM(\"minPlayed\") DESC "\
                             "LIMIT 5"
@@ -56,8 +56,16 @@ def home():
                              x_label="Artist",
                              horizontal=False,
                              height = 350,
-                             color = '#2f6e62'
+                             color = '#709e99'
                              )
+            with st.expander("##### My Top Tracks"):
+                #st.write("##### TOP 20")
+                sql_query="SELECT \"trackName\",SUM(\"minPlayed\") FROM "\
+                          "\"spotifyEDA.app\".streaming_history "\
+                          "GROUP BY \"trackName\" ORDER BY SUM(\"minPlayed\") DESC "\
+                          "LIMIT 20"
+                get_data = cDB.db_get_data_for_chart(sql_query)
+                st.data_editor(get_data['trackName'],width=500,hide_index=True)
         with c3:
             with st.container(border=True):
                 sql_query="SELECT \"trackName\",SUM(\"minPlayed\") FROM "\
@@ -67,14 +75,14 @@ def home():
                 get_data = cDB.db_get_data_for_metric(sql_query)
                 st.metric('##### :green[Top Streamed Song]',get_data['trackName'])
 
-            with st.expander("##### My Top Tracks"):
-                #st.write("##### TOP 20")
-                sql_query="SELECT \"trackName\",SUM(\"minPlayed\") FROM "\
-                          "\"spotifyEDA.app\".streaming_history "\
-                          "GROUP BY \"trackName\" ORDER BY SUM(\"minPlayed\") DESC "\
-                          "LIMIT 20"
-                get_data = cDB.db_get_data_for_chart(sql_query)
-                st.data_editor(get_data['trackName'],width=500,hide_index=True)
+            # with st.expander("##### My Top Tracks"):
+            #     #st.write("##### TOP 20")
+            #     sql_query="SELECT \"trackName\",SUM(\"minPlayed\") FROM "\
+            #               "\"spotifyEDA.app\".streaming_history "\
+            #               "GROUP BY \"trackName\" ORDER BY SUM(\"minPlayed\") DESC "\
+            #               "LIMIT 20"
+            #     get_data = cDB.db_get_data_for_chart(sql_query)
+            #     st.data_editor(get_data['trackName'],width=500,hide_index=True)
             
             with st.container(border=True, height=450):
                 st.write("#### :green[Artist Streaming]")
