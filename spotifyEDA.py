@@ -17,7 +17,7 @@ with tab1:
     myLib.myLib()
 
 with tab2:
-    h.home()
+    h.analysis()
 
 with tab3:
     cDB.main_load_data()

@@ -68,37 +68,29 @@ def myLib():
         #st.write("#### :green[DASHBOARD]")
 
         with h_c1:
-            with st.container(height= 150):
-                st.write("##### :green[My Top Artist]")
-                my_marquee = pd.DataFrame(myMarquee)
-                marq = my_marquee.loc[my_marquee['segment']=='Super Listeners']
-                #st.write(marq['artist'], width=500)
-                st.data_editor(marq['artist'], width=500, hide_index=True)
-
-
-            with st.container(border=True,height=450):
+            with st.container(border=True,height=500):
                 st.write("##### :green[My Saved Albums]")
                 my_albums = pd.DataFrame(myAlbums)
                 album_Artist = my_albums['artist']
-                selected_artist = st.selectbox("#### :blue[Select Artist]",album_Artist.unique(), index=1)
+                selected_artist = st.selectbox("#### :blue[Select Artist]",album_Artist.unique(), index=1, key='artist_album')
                 st.write("##### Albums")
                 album = my_albums.loc[my_albums['artist']==selected_artist,'album']
                 st.data_editor(album, hide_index = True, width = 500)
 
         with h_c2:
             #st.write(" ")
-            with st.container(height=620):
+            with st.container(height=500):
                 st.write("##### :green[My Artists]")
                 my_artists = pd.DataFrame(myArtists)
                 all_artists = my_artists['artists']
                 st.data_editor(all_artists, hide_index=True, height=550,width=550 )
         
         with h_c3:
-            with st.container(height=620):
+            with st.container(height=500):
                 st.write("##### :green[My Tracks]")
                 my_tracks = pd.DataFrame(myTracks)
                 artists = my_tracks['artist']
-                selected_artist = st.selectbox(":blue[Select Artist]",artists.unique(),index=0)
+                selected_artist = st.selectbox(":blue[Select Artist]",artists.unique(),index=0, key='artist_track')
                # tracks = my_tracks['track'].drop_duplicates()
                 st.write("##### Tracks")
                 tracks = my_tracks.loc[my_tracks['artist']==selected_artist,'track'].drop_duplicates()
