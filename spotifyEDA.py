@@ -7,7 +7,7 @@ import homeTab as myLib
 ## page configuration
 st.set_page_config(layout="wide",page_title = "melody meets metrics")
 st.title(":green[Melody Meets Metrics : Spotify Data Analysis]", anchor=None)
-st.subheader("Welcome Aashwija!")
+st.subheader("Welcome!")
 st.logo("logo.png")
 
 # # creating tabs
