@@ -15,6 +15,9 @@ def save_uploaded_file(user_dir, uploaded_file):
 def upload_click_button():
     st.session_state.upload_clicked=True
 
+if 'upload_clicked' not in st.session_state:
+    st.session_state.upload_clicked = False
+    
 #def connect_2_db():
 db_details = { 
     #PostgreSQL
