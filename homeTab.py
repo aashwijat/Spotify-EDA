@@ -29,34 +29,34 @@ def myLib():
     myMarquee = marquee()
 
     with st.container():
-        st.write("### My Library")
+        st.write("### :green[My Library]")
 
     with st.container():
         c1, c2, c3, c4 = st.columns([25,25,25,25])
 
         with c1:
-            st.write("##### :green[Saved Artists]")
+            st.write("##### Saved Artists")
             with st.container(border=True, height=100):
                 sql_query = "SELECT count(1) artist FROM \"spotifyEDA.app\".myartists"
                 metric1 = cDB.db_get_data_for_metric(sql_query)
                 st.metric(":green[#] ",metric1)
         
         with c2:
-            st.write("##### :green[Liked Tracks]")
+            st.write("##### Liked Tracks")
             with st.container(border=True, height=100):
                 sql_query = "SELECT count(1) track FROM \"spotifyEDA.app\".mytracks"
                 metric2 = cDB.db_get_data_for_metric(sql_query)
                 st.metric(":green[#]",metric2)
         
         with c3:
-            st.write('##### :green[All Artists You Listen To]')
+            st.write('##### All Artists You Listen To')
             with st.container(border=True, height=100):
                 sql_query= "SELECT count(DISTINCT artist) FROM \"spotifyEDA.app\".mytracks"
                 metric3 = cDB.db_get_data_for_metric(sql_query)
                 st.metric(":green[#]", metric3)
         
         with c4:
-            st.write('##### :green[All Albums You Listen To]')
+            st.write('##### All Albums You Listen To')
             with st.container(border=True, height=100):
                 sql_query = "SELECT COUNT(DISTINCT album) FROM \"spotifyEDA.app\".mytracks"
                 metric4 = cDB.db_get_data_for_metric(sql_query)
@@ -81,7 +81,7 @@ def myLib():
                 my_albums = pd.DataFrame(myAlbums)
                 album_Artist = my_albums['artist']
                 selected_artist = st.selectbox("#### :blue[Select Artist]",album_Artist.unique(), index=1)
-                st.write("##### :green[Albums]")
+                st.write("##### Albums")
                 album = my_albums.loc[my_albums['artist']==selected_artist,'album']
                 st.data_editor(album, hide_index = True, width = 500)
 

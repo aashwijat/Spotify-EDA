@@ -10,7 +10,7 @@ def home():
         st.write("### :green[My Dashboard]")
     
     with st.container():
-        c1,c2,c3=st.columns([60,5,35])
+        c1,c2,c3=st.columns([60,2,38])
         with c1:
             with st.container(border=True):
                 st.write("##### Top Streamed Artists")
@@ -23,7 +23,7 @@ def home():
                              y_label="Minutes Played",
                              x_label="Artist",
                              horizontal=False,
-                             height = 500,
+                             height = 400,
                              color = '#FFC2B5'
                              )
         with c3:
