@@ -11,20 +11,25 @@ My Tracks : *Displaying a dynamic list of all saved tracks with artist as filter
 
 ##### ***Spotify Analysis Page***
 ###### ***Metrics***
-Count of : Saved Artists
-           Liked Tracks
-           Artists Listened To
-           Albums Listened To
+Count of : Saved Artists,
+           Liked Tracks,
+           Artists Listened To,
+           Albums Listened To,
 
-Top : Artist
-      Song
+Top : Artist,
+      Song,
 
 ###### ***Charts***
 My Top Artists : Bar Chart representing the Top 5 most streamed artists along with number of     minutes streamed. 
 Artist Streaming : Pie Chart comparing segments of artists streamed 
 
-*List*
+###### ***List***
 My Top Tracks : Drop down list comprising of Top 20 tracks. 
+
+#### Built With
+![python](https://www.google.com/url?sa=i&url=https%3A%2F%2Fseekvectors.com%2Fpost%2Fpython-logo-vector&psig=AOvVaw3i6SN4PrXEIuTlhL_6kI0C&ust=1729953026559000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCIDly67fqYkDFQAAAAAdAAAAABAE)
+
+
 
 
            
