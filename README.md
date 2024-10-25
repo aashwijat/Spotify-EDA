@@ -5,37 +5,32 @@ This project aims to perform an exploratory data analysis on my personal Spotify
 
 #### Analysis Overview
 ##### ***Home Page***
-My Saved Albums : *Insights into saved albums, displaying a dynamic list of albums based on artist.* 
-My Artists : *Comprehensive list of all saved artists.*
-My Tracks : *Displaying a dynamic list of all saved tracks with artist as filter*
+- My Saved Albums : *Insights into saved albums, displaying a dynamic list of albums based on artist.* 
+- My Artists : *Comprehensive list of all saved artists.*
+- My Tracks : *Displaying a dynamic list of all saved tracks with artist as filter*
 
 ##### ***Spotify Analysis Page***
 ###### ***Metrics***
-Count of : Saved Artists,
+- Count of : Saved Artists,
            Liked Tracks,
            Artists Listened To,
-           Albums Listened To,
+           Albums Listened To
 
-Top : Artist,
-      Song,
+- Top : Artist,
+      Song
 
 ###### ***Charts***
-My Top Artists : Bar Chart representing the Top 5 most streamed artists along with number of     minutes streamed. 
-Artist Streaming : Pie Chart comparing segments of artists streamed 
+- My Top Artists : Bar Chart representing the Top 5 most streamed artists along with number of     minutes streamed.
+- Artist Streaming : Pie Chart comparing segments of artists streamed 
 
 ###### ***List***
-My Top Tracks : Drop down list comprising of Top 20 tracks.
+- My Top Tracks : Drop down list comprising of Top 20 tracks.
 
 #### Built With
 - Python
 - PostgreSQL
 
-[text](../../../../../../Downloads/streamlit-spotifyEDA-2024-10-25-19-10-00.webm)
-
-
-
-
-           
-
+#### Project 
+https://github.com/user-attachments/assets/161234c1-3bb0-410f-a315-ead176b6eb7a
 
 
