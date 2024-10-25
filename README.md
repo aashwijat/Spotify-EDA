@@ -30,11 +30,7 @@ My Top Tracks : Drop down list comprising of Top 20 tracks.
 - Python
 - PostgreSQL
 
-
-
-
-
-
+[text](../../../../../../Downloads/streamlit-spotifyEDA-2024-10-25-19-10-00.webm)
 
 
 
