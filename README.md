@@ -24,7 +24,13 @@ My Top Artists : Bar Chart representing the Top 5 most streamed artists along wi
 Artist Streaming : Pie Chart comparing segments of artists streamed 
 
 ###### ***List***
-My Top Tracks : Drop down list comprising of Top 20 tracks. 
+My Top Tracks : Drop down list comprising of Top 20 tracks.
+
+#### Built With
+![python](https://github.com/user-attachments/assets/43b05c53-1757-4b96-94ec-8487e78feef5)
+![postgresql](https://github.com/user-attachments/assets/9dcb0d62-c575-47a2-96f7-206062475531)
+
+
 
 
 
