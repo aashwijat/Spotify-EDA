@@ -71,7 +71,7 @@ def main_load_data():
     
     with ld_col3:
         if st.session_state.upload_clicked:
-            db_schema = "truemede_app"
+            db_schema = "spotifyEDA.app"
             number_of_records = bulk_insert_from_dataframe(pd.DataFrame(st.session_state["df"]), db_schema, table_selected)
             st.success(f"Data File Uploaded")
             st.success(f"Table Name: {table_selected}")
