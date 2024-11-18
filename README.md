@@ -11,13 +11,15 @@ This project aims to perform an exploratory data analysis on my personal Spotify
 
 ##### ***Spotify Analysis Page***
 ###### ***Metrics***
-- Count of : Saved Artists,
-           Liked Tracks,
-           Artists Listened To,
-           Albums Listened To
+- Count of : 
+1. Saved Artists,
+2. Liked Tracks,
+3. Artists Listened To,
+4. Albums Listened To
 
-- Top : Artist,
-      Song
+- Top : 
+1. Artist,
+2. Song
 
 ###### ***Charts***
 - My Top Artists : Bar Chart representing the Top 5 most streamed artists along with number of     minutes streamed.
