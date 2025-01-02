@@ -56,14 +56,14 @@ def analysis():
                             "GROUP BY \"artistName\" ORDER BY SUM(\"minPlayed\") DESC "\
                             "LIMIT 5"
                 get_data = cDB.db_get_data_for_chart(sql_query)
-                #st.data_editor(get_data['artistName'],height=525, use_container_width=True, hide_index=True)
+                #st.data_editor(get_data['trackName'],height=525, use_container_width=True, hide_index=True)
                 st.bar_chart(get_data,x='artistName',y='sum',
                              y_label="Minutes Played",
                              x_label="Artist",
                              horizontal=False,
                              height = 360,
                              color = '#70ccbb'
-                             )
+                             ) 
             
             
             
