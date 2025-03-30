@@ -3,6 +3,8 @@ import pandas as pd
 import connectDB as cDB
 import psycopg2 as pg
 import plotly.express as px
+import calplot
+import matplotlib.pyplot as plt
 
 def analysis():
     print("In HOME")
@@ -85,7 +87,40 @@ def analysis():
                 fig = px.pie(chart_data, values='frq', names='category',
                              color_discrete_sequence=('#70ccbb','#2f6e62'))
                 st.plotly_chart(fig,theme=None)
-            
+        
+        # with st.container(border=True, height=450):
+        #     st.write("#### :green[My Listening Activity]")
+        #     ## processing data
+        #     conn = cDB.db_connect()
+        #     cursor = conn.cursor()
+        #     sql_query = "SELECT \"endTime\" FROM \"spotifyEDA.app\".streaming_history"
+        #     df = pd.read_sql(sql_query,cursor)
+        #     ##get_data = cDB.db_get_data_for_chart(sql_query)
+        #     #converting endtime to date-time
+        #     df['endTime']=pd.to_datetime(df['endTime'], format='%d-%m-%Y %H:%M')
+        #     #extracting month and year
+        #     df['monthYear']=df['endTime'].dt.to_period('M')
+        #     ## aggregating counts
+        #     monthly_count = df['monthYear'].value_counts().sort_index()
+
+        #     ##converting for visualization
+        #     monthly_count.index = monthly_count.index.astype(str)
+
+        #     ##plot
+        #     fig, ax = calplot.calplot(monthly_count,cmap='Blues', edgecolor='black')
+        #     st.title("Listening Activity by Month")
+        #     st.pyplot(fig)
+        with st.container(border=True, height=450):
+            st.write("#### :green[My Listening Activity]")
+            sql_query = "SELECT \"endTime\" FROM \"spotifyEDA.app\".streaming_history"
+            df = cDB.db_get_data_for_chart(sql_query)
+            df['endTime'] = pd.to_datetime(df['endTime'],format="%d-%m-%Y %H:%M", errors='coerce')
+            df['date'] = df['endTime'].dt.date  
+            daily_counts = df['date'].value_counts().sort_index()
+            daily_counts.index = pd.to_datetime(daily_counts.index)
+            daily_counts.index = pd.to_datetime(daily_counts.index, format='%Y-%m')
+            fig, ax = calplot.calplot(daily_counts, cmap='viridis', edgecolor='black', dayticks=True)
+            st.pyplot(fig)
         with st.expander("##### My Top Tracks"):
             #st.write("##### TOP 20")
             sql_query="SELECT \"trackName\",SUM(\"minPlayed\") FROM "\
@@ -94,3 +129,5 @@ def analysis():
                         "LIMIT 20"
             get_data = cDB.db_get_data_for_chart(sql_query)
             st.data_editor(get_data['trackName'],width=1500, hide_index=True)
+
+    
