@@ -25,16 +25,21 @@ This project delves into an exploratory analysis of my personal Spotify streamin
 - My Top Artists :
   A bar chart representing the Top 5 most streamed artists along with their total minutes streamed. 
 - Artist Streaming :
-  A pie chart comparing segments of artists streamed 
+  A pie chart comparing segments of artists streamed
+- My Listening Activity :
+  A calendar heatmap that shows the distribution of count of songs listened to on days across months. 
 
 ##### Lists
 - My Top Tracks : Drop down list comprising of Top 20 tracks.
 
 ### Built With
 - Python : For data analysis, visualization, and backend logic.
-- PostgreSQL : For robust data storage and querying. 
+- PostgreSQL : For robust data storage and querying.
+- Libraries : Streamlit, Pandas, Matplotlib 
 
 ### Project 
-https://github.com/user-attachments/assets/161234c1-3bb0-410f-a315-ead176b6eb7a
+https://github.com/user-attachments/assets/f297fbb3-032d-4041-b0ee-4b8fbe045a53
+
+
 
 
